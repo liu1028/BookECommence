@@ -7,6 +7,14 @@ ul,ol
 {
 	list-style:none;
 }
+.left
+{
+    float:left;
+}
+.right
+{ 
+    float:right;
+}
 .nav_fixed
 {
     z-index:9999;
@@ -16,7 +24,7 @@ ul,ol
     position:fixed;
 }
 .nav_fixed ul
-{
+{ 
     margin-left:240px;
 }
 .nav_fixed li
@@ -39,4 +47,268 @@ ul,ol
 .nav_fixed li a:hover
 {
     color:orange;
+}
+
+/******主体部分******/
+.main
+{
+    width:900px;
+    margin:0px auto;
+}
+
+.head
+{
+    width:100%;
+    padding:75px 10px 10px 10px;
+}
+
+.logo
+{
+    width:150px;
+    height:60px;
+}
+
+.title
+{
+    margin-left:8px;
+    height:60px;
+    font:normal bold 18px/60px "微软雅黑","宋体";
+}
+
+.item_h
+{
+    padding:10px 5px 8px 8px;
+    border-bottom:2px solid #eee;
+    overflow:auto;
+}
+
+.caltop .t_price
+{
+   color:#f40; 
+   font-size:16px;
+}
+
+.orderBtnTop
+{
+    display:inline-block;
+    width:100px;
+    height:25px;
+    line-height:25px;
+    background: #e5e5e5;
+    color:gray;
+    cursor: not-allowed;
+    text-align:center;
+    text-decoration: none;
+    font-size:13px;
+}
+
+.orderBtnTopallow
+{
+    background: #f22d00;
+    color: #fff;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+ul.chart_info > li{
+    width:100%;
+    margin-bottom:10px;
+}  
+
+ul.chart_meta > li
+{
+    padding-top:23px;
+    padding-bottom:20px;
+    text-align:center;
+    font-size:13px;
+}
+
+li.chck{
+  width:60px;  
+}
+
+li.info{
+   width:370px;
+}
+
+li.empty{
+    width:50px;
+}
+li.per_price
+{
+    width:80px;
+}
+li.num{
+    width:135px;
+    position:relative;
+}
+li.t_price{
+    width:90px;
+    color: #f40;
+    font-weight:bold;
+}
+li.oper{
+    width:80px;
+}
+
+
+ul.item
+{
+    padding:15px 8px 15px 8px;
+    background:rgb(250,250,250);
+    border:1px solid #ddd;
+    overflow: auto;
+}
+
+ul.item > li
+{
+    height:80px;
+    vertical-align: middle;
+}
+
+.binfo
+{
+    display:inline-block;
+    margin-left:8px;
+    padding-top:7px;
+}
+
+.bookname
+{
+    font-weight:bold;
+}
+.pubdate,.author
+{
+    font-size:13px;
+}
+.block
+{
+    display:inline-block;
+}
+
+/*****按钮*****/
+.reduce,.add
+{
+    width:19px;
+    height:25px;
+    border:1px solid #999;
+    background:#ddd;
+    text-align: center;
+    line-height:25px;
+}
+.reduce:hover,.add:hover
+{
+    border:1px solid #f22d00;
+    cursor: pointer;
+    color: #f22d00;
+    background:#ccc;
+    font-weight: bold;
+}
+.num_in
+{
+    position:absolute;
+    width:43px;
+    height:27px;
+    left:20px;
+    z-index: 1000;
+    text-align:center;
+}
+.reduce
+{
+    position: absolute;
+    z-index: 9999;
+}
+.add
+{
+    position: absolute;
+    left:62px;
+    z-index:1500;
+}
+/**************/
+
+.delete
+{   
+    text-decoration: none;
+    width:80px;
+    height:23px;
+    background:#ccc;
+    cursor: pointer;
+    font:normal normal 13px/23px "宋体";
+    text-align: center;
+    color:gray;
+}
+.delete:hover
+{
+    color:white;
+    background:#f22d00;  
+}
+
+.mid{
+    padding-top:10px;
+}
+
+.chck
+{
+    width:18px;
+    height:18px;
+    margin-top:3px;
+    margin-left:10px;
+}
+
+ul.calbottom
+{
+    margin-top:20px;
+    background:#ddd;
+    overflow: auto;
+    padding-left:10px;
+}
+
+ul.calbottom > li
+{
+    height:60px;
+    line-height:60px;
+    font-size:16px;
+    margin-right:20px;
+}
+
+ul.calbottom > li > span
+{
+    display: inline-block;
+    font-size:23px !important;
+    font-weight: bold;
+    font-family: "微软雅黑","宋体";
+    color: #f22d00;
+}
+
+.orderBtnBtom
+{
+    margin-right:-20px;
+    heihgt:60px;
+    width:150px;
+    font:normal bold 19px/60px "宋体";
+    text-align: center;
+    color:#999;
+    cursor: not-allowed;
+}
+
+.orderBtnBtomallow
+{
+    background: #f22d00;
+    color:white;
+    cursor:pointer;
+}
+
+#sel_all_bottom,#unsel_all_bottom
+{
+    height:60px;
+    width:70px;
+    font:normal bold 18px/60px "宋体";
+    text-align: center;
+    color:#999;
+}
+#sel_all_bottom:hover,#unsel_all_bottom:hover
+{
+    background: #f22d00;
+    color:white;
+    cursor: pointer;
 }
