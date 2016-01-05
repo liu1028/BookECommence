@@ -1,0 +1,46 @@
+body,*
+{
+    padding:0px;
+    margin:0px;
+}
+
+ul,ol
+{
+    list-style:none;
+}
+
+.lmenu li
+{
+    height: 35px;
+    line-height: 35px;
+    padding-left: 45px;
+    border-bottom: 1px solid #eee;
+    background-position: 10% 50%;
+}
+.lmenu li strong
+{
+    width: 100px;
+    text-align: left;
+    display: inline-block;
+    color: red;
+}
+.lmenu li:hover
+{
+    background-color: #eaf2ff;
+    border-left: 3px solid #4e8ffc;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#editform ul li
+{
+	padding-bottom:7px;
+	padding-top:7px;
+}
+#editform .plain
+{
+	display:inline-block;
+	width:90px;
+	padding-right:8px;
+	text-align:right;
+}

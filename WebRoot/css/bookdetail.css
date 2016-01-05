@@ -1,0 +1,102 @@
+.clear
+{
+    clear:both;
+}
+.left
+{
+    float:left;
+}
+.right
+{
+    float:right;
+}
+.book_detail
+{
+    
+    margin:0px 45px 10px;
+    padding:75px 10px 10px 110px;
+    width:600px;
+    background:url('../images/strip_h.jpg') no-repeat scroll;
+    overflow:auto;
+}
+
+.book_detail .img_d
+{
+    width:150px;
+    height:180px;
+    margin-right:40px;
+}
+.book_detail img
+{
+    width:100%;
+    height:100%;
+    border:1px solid #ddd;
+    box-shadow:2px 3px 3px #aaa;    
+}
+.con_d .bname_d
+{
+    font-size: 20px;
+    color: #428BCA;
+    font-weight:bold;
+    display:inline-block;
+    margin-bottom:6px;
+    width:270px;
+}
+
+.con_d .ld
+{
+    height:35px;
+    line-height:35px;
+    color:#999;
+    font-size:17px;
+}
+
+.con_d
+{
+    margin-bottom:30px;    
+    width:400px;
+    position:relative;
+}
+
+/***收藏小图标****/
+.favor
+{
+    position:absolute;
+    height:25px;
+    top:0px;
+    left:275px;
+    background:url('../images/favor.png') no-repeat scroll;
+    padding-left:27px;
+    line-height:25px;
+    color:black;
+}
+.favor:hover
+{
+    color:orange;
+    cursor:pointer;
+}
+
+
+.summary,.catalog
+{
+    font-size:16px;
+    color:orange;
+    padding-right:30px;
+}
+.catalog .cata_c
+{
+    margin-left:10px;
+}
+.d_title
+{
+    font-size:17px;
+    font-weight:bold;
+    margin-bottom:8px;
+    margin-top:30px;
+}
+
+p
+{
+    text-indent:2em;    
+}
+
