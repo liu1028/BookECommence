@@ -56,6 +56,7 @@
                 </li>
                 <li>
                     <ul class="item" style="clear:both;">
+                        <li><input type="hidden" value="bookguid" /></li>
                         <li class="chck left"><input type="checkbox" class="chck" name="chck"/></li>
                         <li class="info left">
                             <div class="left"><img src="<%=path%>/bookimages/24个比利.jpg" width="70" height="80"/></div>
@@ -69,7 +70,7 @@
                         <li class="per_price left mid">119.25</li>
                         <li class="num left mid">
                             <span class="reduce block">-</span>
-                            <input class="num_in" />
+                            <input class="num_in" id="num_in" type="text" value="1"/>
                             <span class="add">+</span>
                         </li>
                         <li class="t_price left mid">119.25</li>
@@ -80,6 +81,7 @@
                 </li>
                 <li>
                     <ul class="item" style="clear:both;">
+                        <li><input type="hidden" value="bookguid" /></li>
                         <li class="chck left"><input type="checkbox" class="chck" name="chck"/></li>
                         <li class="info left">
                             <div class="left"><img src="<%=path%>/bookimages/24个比利.jpg" width="70" height="80"/></div>
@@ -93,7 +95,7 @@
                         <li class="per_price left mid">123.25</li>
                         <li class="num left mid">
                             <span class="reduce block">-</span>
-                            <input class="num_in" />
+                            <input class="num_in" type="text" value="1" />
                             <span class="add">+</span>
                         </li>
                         <li class="t_price left mid">123.25</li>
@@ -125,14 +127,13 @@
     <script type="text/javascript">
         var num=0;
         var t_price=0.00;
-        
+               
         $('.chck').change(function(){
-            var price=parseFloat($(this).parent().parent().find('li').eq(5).text());
+            var price=parseFloat($(this).parent().parent().find('li').eq(6).text());
             var el_num=$('#select_m');
             var el_price=$('.bprice');
             
             if($(this).is(':checked')){
-            
                 num++;
                 t_price+=price;
                 
@@ -143,7 +144,7 @@
             
                 el_num.text(num);
                 el_price.text(t_price);
-                $(this).parent().parent().css('backgroundColor','#fff8e1');
+                $(this).parent().parent().css('backgroundColor','#fff8e1');              
             }else{
                 num--;
                 t_price-=price;
@@ -166,7 +167,7 @@
 
                 var items= $('.chart_info').find('ul[class="item"]'),s_p=0.00;
                 items.each(function(index,tar){
-                    s_p+=parseFloat($(tar).find('li').eq(5).text());
+                    s_p+=parseFloat($(tar).find('li').eq(6).text());
                     $(tar).css('backgroundColor','#fff8e1');
                 });
                 
@@ -209,6 +210,78 @@
 
         });
         
+        $('.reduce').click(function(){
+            
+            if($(this).parents('ul[class="item"]').find('input[name="chck"]').is(':checked')){
+                layer.msg('亲，在未勾选该商品的时候才能对商品数量进行改变!', { shift: 6, time: 3000 });
+                return; 
+            }
+            
+            var el=$(this).siblings('input[class="num_in"]');
+            var num=parseFloat(el.val());
+            
+            if(num>1){
+                num--;
+                el.val(num);
+            }
+            
+            var per_price=parseFloat($(this).parent().parent().find('li').eq(4).text()),t_price;
+            t_price=per_price*num;
+            $(this).parent().parent().find('li').eq(6).text(t_price);
+            
+        });
+        
+        $('.add').click(function(){
+            
+            if($(this).parents('ul[class="item"]').find('input[name="chck"]').is(':checked')){
+                layer.msg('亲，在未勾选该商品的时候才能对商品数量进行改变!', { shift: 6, time: 3000 });
+                return; 
+            }
+            
+            var el=$(this).siblings('input[class="num_in"]');
+            var num=parseFloat(el.val());
+            
+            if(num<4000){
+                num++;
+                el.val(num);
+            }      
+            
+            var per_price=parseFloat($(this).parent().parent().find('li').eq(4).text()),t_price;
+            t_price=per_price*num;
+            $(this).parent().parent().find('li').eq(6).text(t_price);
+        });
+        
+        $('.num_in').focus(function(){
+            if($(this).parents('ul[class="item"]').find('input[name="chck"]').is(':checked')){
+                $(this).attr("readonly",true);
+            }else{
+                $(this).removeAttr("readonly",false); 
+            }
+        });
+        
+        $('.num_in').blur(function(){
+            
+            var num_str=$(this).val(),num=0;
+            
+            if(isNaN(num_str)){
+                num=1;
+            }else{
+                num=parseFloat(num_str);
+            }
+            
+            if(num>4000){
+                num=4000;
+            }else if(num<1){
+                num=1;
+            }
+            
+            
+            var per_price=parseFloat($(this).parent().parent().find('li').eq(4).text()),t_price;
+            t_price=per_price*num;
+            $(this).parent().parent().find('li').eq(6).text(t_price);        
+            
+            $(this).val(num);
+        });
     </script>
   </body>
 </html>
