@@ -56,7 +56,7 @@
                 </li>
                 <li>
                     <ul class="item" style="clear:both;">
-                        <li class="chck left"><input type="checkbox" class="chck"/></li>
+                        <li class="chck left"><input type="checkbox" class="chck" name="chck"/></li>
                         <li class="info left">
                             <div class="left"><img src="<%=path%>/bookimages/24个比利.jpg" width="70" height="80"/></div>
                             <span class="binfo left">
@@ -80,7 +80,7 @@
                 </li>
                 <li>
                     <ul class="item" style="clear:both;">
-                        <li class="chck left"><input type="checkbox" class="chck"/></li>
+                        <li class="chck left"><input type="checkbox" class="chck" name="chck"/></li>
                         <li class="info left">
                             <div class="left"><img src="<%=path%>/bookimages/24个比利.jpg" width="70" height="80"/></div>
                             <span class="binfo left">
@@ -109,7 +109,7 @@
                 <li>
                     <ul class="calbottom">
                         <li class="left"><div id="sel_all_bottom">全选</div></li>
-                        <li class="left"><div id="unsel_all_bottom">全选</div></li>
+                        <li class="left"><div id="unsel_all_bottom">全不选</div></li>
                         
                         <li class="right"><div id="orderBtnBtom" class="orderBtnBtom">提交订单</div></li>
                         <li class="right">合计：¥<span class="bprice">0.00</span></li>
@@ -160,6 +160,55 @@
         
             return false;
         });
+        
+        var IsSelected=0;
+        $('#sel_all_bottom').click(function(){
+
+                var items= $('.chart_info').find('ul[class="item"]'),s_p=0.00;
+                items.each(function(index,tar){
+                    s_p+=parseFloat($(tar).find('li').eq(5).text());
+                    $(tar).css('backgroundColor','#fff8e1');
+                });
+                
+                t_price=s_p;
+                num=items.length;
+                
+                $('#select_m').text(num);
+                $('.bprice').text(t_price);
+                
+                var ids = document.getElementsByName("chck");
+                for (var i = 0; i < ids.length; i++) {
+                    ids[i].checked = true;
+                }
+                
+                $('#orderBtnTop').addClass('orderBtnTopallow');
+                $('#orderBtnBtom').addClass('orderBtnBtomallow');
+        });
+        
+        
+        $('#unsel_all_bottom').click(function(){
+            
+            var items= $('.chart_info').find('ul[class="item"]'),s_p=0.00;
+            items.each(function(index,tar){
+                $(tar).css('backgroundColor','rgb(250,250,250)');
+            });
+            
+            t_price=0.00;
+            num=0;
+            
+            $('#select_m').text(num);
+            $('.bprice').text(t_price);
+            
+            var ids = document.getElementsByName("chck");
+            for (var i = 0; i < ids.length; i++) {
+                ids[i].checked = false;
+            }
+            
+            $('#orderBtnTop').removeClass('orderBtnTopallow');
+            $('#orderBtnBtom').removeClass('orderBtnBtomallow');
+
+        });
+        
     </script>
   </body>
 </html>
