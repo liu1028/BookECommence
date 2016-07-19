@@ -28,4 +28,4 @@
  
 ***
 
-###相关的网站请参考[http://zhonghuiblog.com:8080/BookECommerce/](http://zhonghuiblog.com:8080/BookECommerce/) (如果不可访问，说明已下线)
+###相关的网站请参考[这里](http://121.42.153.166:8080/BookECommerce/) (如果不可访问，说明已下线)
